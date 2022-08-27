@@ -34,6 +34,16 @@ public class User{
 	private String accNumber;
 	private String ifscCode;
 	private String isVerified="False";
+	
+	
+	public String getIsVerified() {
+		return isVerified;
+	}
+
+	public void setIsVerified(String isVerified) {
+		this.isVerified = isVerified;
+	}
+
 	private Date applied_on=Date.valueOf(LocalDate.now());
 
 	@OneToOne(
