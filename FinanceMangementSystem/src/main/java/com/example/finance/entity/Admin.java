@@ -14,16 +14,43 @@ import lombok.Setter;
 
 @Entity
 @Data
-@Getter
-@Setter
-@NoArgsConstructor
+//@Getter
+//@Setter
+//@NoArgsConstructor
 @AllArgsConstructor
 @Table(name="adminlogin")
 public class Admin {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long admin_id;
+
+	public long getAdmin_id() {
+		return admin_id;
+	}
+
+	public void setAdmin_id(long admin_id) {
+		this.admin_id = admin_id;
+	}
+
+	public String getAname() {
+		return aname;
+	}
+
+	public void setAname(String aname) {
+		this.aname = aname;
+	}
+
+	public String getApassword() {
+		return apassword;
+	}
+
+	public void setApassword(String apassword) {
+		this.apassword = apassword;
+	}
+
 	private String aname;
 	private String apassword;
 
+	public Admin() {
+	}
 }

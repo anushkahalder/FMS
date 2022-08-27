@@ -1,3 +1,4 @@
+/*
 package com.example.finance.repository;
 
 import com.example.finance.entity.User;
@@ -7,3 +8,4 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<User,Long> {
 }
+*/

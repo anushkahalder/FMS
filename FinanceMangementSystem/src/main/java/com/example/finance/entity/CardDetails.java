@@ -1,14 +1,9 @@
 package com.example.finance.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,17 +17,19 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CardDetails {
+public class CardDetails implements Serializable{
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="reg_id", referencedColumnName = "regId")
+	@JoinColumn(name="user_id", referencedColumnName = "reg_id")
 	private User user;
+
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="card_type", referencedColumnName = "cardType")
+	@JoinColumn(name="card_type", referencedColumnName = "card_type")
 	private EmiCard cardtype;
+
  	private int card_number;
  	private Date validity;
- 	private int init_balance;
- 	private int avail_balance;
+ 	private int init_balance;private int avail_balance;
 }

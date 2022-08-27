@@ -1,3 +1,4 @@
+
 package com.example.finance.entity;
 
  
@@ -41,3 +42,4 @@ public class Product {
  
 
 }
+

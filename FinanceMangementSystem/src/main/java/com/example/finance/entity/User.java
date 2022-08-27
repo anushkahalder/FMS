@@ -23,18 +23,18 @@ public class User{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long regId;
-	private String userName;
-	private long phNumber;
+	private long reg_id;
+	private String user_name;
+	private long ph_number;
 	private String email;
-	private String userPassword;
+	private String user_password;
 	private String address;
 	private String cardType;
 	private String bankName;
 	private String accNumber;
 	private String ifscCode;
 	private String isVerified="False";
-	private Date appliedOn=Date.valueOf(LocalDate.now());
+	private Date applied_on=Date.valueOf(LocalDate.now());
 
 	@OneToOne(
 			cascade = CascadeType.ALL,

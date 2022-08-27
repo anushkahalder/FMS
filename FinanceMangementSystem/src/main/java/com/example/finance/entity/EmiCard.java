@@ -1,5 +1,9 @@
 package com.example.finance.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.sql.Date;
 
 import javax.persistence.CascadeType;
@@ -11,10 +15,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="emicard")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class EmiCard {
 	
 	@Id
-	//Unidirectional
 	private String card_type;
 
 	private Date validity;
