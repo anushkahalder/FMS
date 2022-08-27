@@ -23,6 +23,8 @@ public class Admin {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long admin_id;
+	private String aname;
+	private String apassword;
 
 	public long getAdmin_id() {
 		return admin_id;
@@ -48,8 +50,7 @@ public class Admin {
 		this.apassword = apassword;
 	}
 
-	private String aname;
-	private String apassword;
+
 
 	public Admin() {
 	}
