@@ -3,11 +3,8 @@ package com.example.finance.entity;
 import java.sql.Date;
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
@@ -26,18 +23,24 @@ public class User{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private long reg_id;
-	private String user_name;
-	private long ph_number;
+	private long regId;
+	private String userName;
+	private long phNumber;
 	private String email;
-	private String user_password;
+	private String userPassword;
 	private String address;
-	private String card_type;
-	private String bank_name;
-	private String acc_number;
-	private String ifsc_code;
+	private String cardType;
+	private String bankName;
+	private String accNumber;
+	private String ifscCode;
 	private String isVerified="False";
-	private Date applied_on=Date.valueOf(LocalDate.now());
+	private Date appliedOn=Date.valueOf(LocalDate.now());
+
+	@OneToOne(
+			cascade = CascadeType.ALL,
+			mappedBy = "user"
+	)
+	private CardDetails cardDetails;
 	
 	
 }

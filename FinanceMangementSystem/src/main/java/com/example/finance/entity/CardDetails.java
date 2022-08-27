@@ -31,8 +31,8 @@ public class CardDetails {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="card_type", referencedColumnName = "cardType")
 	private EmiCard cardtype;
- private int card_number;
- private Date validity;
- private int init_balance;
- private int avail_balance;
+ 	private int card_number;
+ 	private Date validity;
+ 	private int init_balance;
+ 	private int avail_balance;
 }
