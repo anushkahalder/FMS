@@ -17,15 +17,8 @@ public interface ProductRepository  extends JpaRepository<Product, Integer> {
     
 
 
-    @Autowired
-    private ProductService pdtservide;
-
-
-    @PostMapping("/products")
-    public Product saveProduct(@RequestBody Product product){
+  
 
 
     }
-
-}
 
