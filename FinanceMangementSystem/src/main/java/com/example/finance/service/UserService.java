@@ -16,4 +16,5 @@ public interface UserService {
     User getUserById(Long userId);
 
     boolean userLogin(User user) throws UserNamePasswordIncorrectException, UserDontExistException;
+
 }

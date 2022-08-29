@@ -8,4 +8,9 @@ public interface AdminService {
     Admin addAdmin(Admin admin);
 
     Integer activateUser(long userId,String status);
+
+//    Integer updateUserCard(
+//            long userId
+//    );
+
 }

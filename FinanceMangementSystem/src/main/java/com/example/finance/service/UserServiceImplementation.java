@@ -12,6 +12,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UserServiceImplementation implements UserService{
@@ -35,13 +36,33 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+       List<User> userlist = userRepository.findAll();
+        List<User> users = userlist
+                .stream()
+                .map(user -> new User(
+                        user.getReg_id(),
+                        user.getUser_name(),
+                        user.getPh_number(),
+                        user.getEmail(),
+                        user.getUser_password(),
+                        user.getUser_confirm_password(),
+                        user.getAddress(),
+                        user.getCardType(),
+                        user.getBankName(),
+                        user.getAccNumber(),
+                        user.getIfscCode(),
+                        user.getIsVerified()))
+                .collect(Collectors.toList());
+        return users;
+
     }
 
     @Override
     public User getUserById(Long userId) {
         return userRepository.findById(userId).get();
     }
+
+
 
     @Override
     public boolean userLogin(User user) throws UserNamePasswordIncorrectException ,UserDontExistException {
@@ -63,6 +84,7 @@ public class UserServiceImplementation implements UserService{
             return true;
 
     }
+
 
 
 }

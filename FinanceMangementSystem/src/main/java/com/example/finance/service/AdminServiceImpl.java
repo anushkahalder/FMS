@@ -63,4 +63,16 @@ public class AdminServiceImpl implements AdminService{
         return adminRepository.activateUser(userId,status);
     }
 
+//    @Override
+//    public Integer updateUserCard(long userId){
+//        User user = userRepository.findById(userId).get();
+//        String cardType = user.getCardType();
+//        if(cardType.equalsIgnoreCase("gold")){
+//            return adminRepository.updateCard("Gold","29-08-2024",100000,100000,userId);
+//        }else{
+//            return adminRepository.updateCard("Titanium","29-08-2026",200000,200000,userId);
+//        }
+//
+//    }
+
 }
