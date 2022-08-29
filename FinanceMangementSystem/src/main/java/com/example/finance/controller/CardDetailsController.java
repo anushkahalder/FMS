@@ -34,8 +34,8 @@ public class CardDetailsController {
 	}
 	
 	
-	@PutMapping("/updatebal/{regid}/{price}")
-	public CardDetails updateBal(@PathVariable("reg_id") long reg_id, @PathVariable("price") int price){
-		return cardService.updateBal(reg_id, price);
-	}
+//	@PutMapping("/updatebal/{regid}/{price}")
+//	public CardDetails updateBal(@PathVariable("reg_id") long reg_id, @PathVariable("price") int price){
+//		return cardService.updateBal(reg_id, price);
+//	}
 }

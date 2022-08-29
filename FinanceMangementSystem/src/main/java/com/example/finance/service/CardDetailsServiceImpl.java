@@ -4,6 +4,7 @@ import javax.persistence.TypedQuery;
 
 import com.example.finance.entity.Admin;
 import com.example.finance.entity.CardDetails;
+import com.example.finance.entity.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class CardDetailsServiceImpl implements CardDetailsService{
 
 	@Override
 	public CardDetails setCardDetails(long uid) {
-		userService.findById(uid);
+		User u=userService.findById(uid).get();
         return null;
 	}
 
