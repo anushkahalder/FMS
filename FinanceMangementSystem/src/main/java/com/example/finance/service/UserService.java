@@ -12,4 +12,8 @@ public interface UserService {
     List<User> getAllUsers();
 
     User getUser(Long userId);
+
+	User getCardDetails(long uid);
+
+	Object findById(long uid);
 }

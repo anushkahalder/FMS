@@ -34,5 +34,17 @@ public class UserServiceImplementation implements UserService{
         return userRepository.findById(userId).get();
     }
 
+	@Override
+	public User getCardDetails() {
+		// TODO Auto-generated method stub
+		return userRepository.getCardDetails();
+	}
+
+//	@Override
+//	public User getCardDetails(long uid) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 
 }
