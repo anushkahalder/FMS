@@ -21,19 +21,18 @@ public class ProdHistroy {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long prod_hist_id;
-	
-	@ManyToOne(targetEntity= User.class,cascade=CascadeType.ALL)
-	@JoinColumn(name="reg_id",referencedColumnName="reg_id")
+
+	@ManyToOne(targetEntity =User.class,cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_id",referencedColumnName = "reg_id")
 	private User user;
-	
-	@ManyToOne(targetEntity= Product.class,cascade=CascadeType.ALL)
+
+	@OneToOne(targetEntity= Product.class,cascade=CascadeType.ALL)
 	@JoinColumn(name="product_id",referencedColumnName="product_id")
 	private Product product;
-	
-	private String p_name;
-	private float amt_paid;
-	private float emi_paid;
-	private float amt_bal;
-	private float price;
-	private Date purchaseDate;
+
+	private int emi_month;
+
+	private int emi_paid;
+
+
 }

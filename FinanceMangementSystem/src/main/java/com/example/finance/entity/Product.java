@@ -2,12 +2,7 @@
 package com.example.finance.entity;
 
  
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
- 
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -31,12 +26,11 @@ public class Product {
 	private int product_id;
 	private String p_name;
 	private String p_description;
-	private String p_image; 
-	private int price; 
-	private int emi_3months;
-	private int emi_6months;
-	private int emi_9months;
-	private int emi_12months;
+	private int price;
+
+	@OneToOne(cascade =CascadeType.ALL , mappedBy = "product")
+	private ProdHistroy prodHistroy;
+
  
 	
  

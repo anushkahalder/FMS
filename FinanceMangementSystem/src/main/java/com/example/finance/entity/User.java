@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.validation.annotation.Validated;
 
 @Entity
 @Data
@@ -24,15 +25,27 @@ public class User{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long reg_id;
+
 	private String user_name;
+
 	private long ph_number;
+
 	private String email;
+
 	private String user_password;
+
+	private String user_confirm_password;
+
 	private String address;
+
 	private String cardType;
+
 	private String bankName;
+
 	private String accNumber;
+
 	private String ifscCode;
+
 	private String isVerified="False";
 	
 	
@@ -44,13 +57,12 @@ public class User{
 		this.isVerified = isVerified;
 	}
 
-	private Date applied_on=Date.valueOf(LocalDate.now());
 
 	@OneToOne(
 			cascade = CascadeType.ALL,
 			mappedBy = "user"
 	)
 	private CardDetails cardDetails;
-	
+
 	
 }
