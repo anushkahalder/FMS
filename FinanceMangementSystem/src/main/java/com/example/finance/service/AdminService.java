@@ -9,8 +9,5 @@ public interface AdminService {
 
     Integer activateUser(long userId,String status);
 
-//    Integer updateUserCard(
-//            long userId
-//    );
 
 }

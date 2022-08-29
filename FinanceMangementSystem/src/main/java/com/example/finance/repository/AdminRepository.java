@@ -17,15 +17,5 @@ public interface AdminRepository extends JpaRepository<Admin,Integer> {
     @Query("update User u set u.isVerified=:status where u.reg_id=:userId")
     Integer activateUser(long userId,String status);
 
-//    @Transactional
-//    @Modifying
-//    @Query("update CardDetails c set c.card_type=:type,c.validity=:val,c.card_limit=:limit,c.balance=:bal where c.reg_id=:userId")
-//    Integer updateCard(
-//           String type,
-//           String val,
-//           int limit,
-//           int bal,
-//           long userId
-//            );
 
 }

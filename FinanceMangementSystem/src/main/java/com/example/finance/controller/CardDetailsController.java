@@ -8,6 +8,8 @@ import com.example.finance.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.criteria.CriteriaBuilder;
+
 @RestController
 @RequestMapping("/carddetails")
 public class CardDetailsController {
@@ -19,20 +21,20 @@ public class CardDetailsController {
 	UserService userservice;
 
 	@PostMapping("/set/{id}")
-	public CardDetails cardDetails(@RequestBody CardDetails cardDetails,@PathVariable("id") long userId){
-		return cardService.saveInitialCardDetails(cardDetails,userId);
+	public CardDetails cardDetails(@PathVariable("id") long userId){
+		return cardService.saveInitialCardDetails(userId);
 	}
 
-	//@PostMapping("/setcard/{id}")
-	//public CardDetails setCardDetails(@PathVariable("id") long uid) {
-	//	return cardService.setCardDetails(uid);
-	//}
+//	@PutMapping("/setcard/{id}")
+//	public Integer setCardDetails(@PathVariable("id") long uid) {
+//		return cardService.setCardDetails(uid);
+//	}
 	
 //	@GetMapping("/getcard/{id}")
 //	public CardDetails getCardDetails(@PathVariable("id") long uid) {
 //		return cardService.getCardDetails(uid);
 //	}
-//
+////
 	
 //	@PutMapping("/updatebal/{regid}/{price}")
 //	public CardDetails updateBal(@PathVariable("reg_id") long reg_id, @PathVariable("price") int price){

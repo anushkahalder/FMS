@@ -54,10 +54,5 @@ public class AdminController {
         return adminService.activateUser(userId,"true");
     }
 
-    //update usercard
-//    @PutMapping("users/updatecard/{id}")
-//    public Integer updateUserCard(@PathVariable("id") long userId){
-//        return adminService.updateUserCard(userId);
-//    }
 
 }
