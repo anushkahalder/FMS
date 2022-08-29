@@ -48,7 +48,7 @@ public class User{
 
 	private String isVerified="False";
 	
-	/*
+	
 	public long getReg_id() {
 		return reg_id;
 	}
@@ -159,6 +159,36 @@ public class User{
 			mappedBy = "user"
 	)
 	private CardDetails cardDetails;
+
+
+	/*public User(long reg_id, String user_name, long ph_number, String email, String user_password,
+			String user_confirm_password, String address, String cardType, String bankName, String accNumber,
+			String ifscCode, String isVerified, CardDetails cardDetails) {
+		super();
+		this.reg_id = reg_id;
+		this.user_name = user_name;
+		this.ph_number = ph_number;
+		this.email = email;
+		this.user_password = user_password;
+		this.user_confirm_password = user_confirm_password;
+		this.address = address;
+		this.cardType = cardType;
+		this.bankName = bankName;
+		this.accNumber = accNumber;
+		this.ifscCode = ifscCode;
+		this.isVerified = isVerified;
+		this.cardDetails = cardDetails;
+	}
 */
+	public User() {
+		super();
+	}
+
+	public User(long reg_id2, String user_name2, long ph_number2, String email2, String user_password2,
+			String user_confirm_password2, String address2, String cardType2, String bankName2, String accNumber2,
+			String ifscCode2, String isVerified2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	
 }

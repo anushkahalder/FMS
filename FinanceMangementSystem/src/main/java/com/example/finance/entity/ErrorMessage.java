@@ -11,6 +11,9 @@ import org.springframework.http.HttpStatus;
 public class ErrorMessage {
     private HttpStatus status;
     private String message;
+	public ErrorMessage(HttpStatus conflict, String message2) {
+		// TODO Auto-generated constructor stub
+	}
 	public HttpStatus getStatus() {
 		return status;
 	}
