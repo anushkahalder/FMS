@@ -19,6 +19,15 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
+    AdminController(){
+
+    }
+
+    public AdminController(AdminService adminService) {
+        this.adminService = adminService;
+    }
+
+
 
     //Create Admin //->Restricted route use only once
     @PostMapping("/create")
@@ -44,4 +53,6 @@ public class AdminController {
     public Integer activateUser(@PathVariable("id") long userId){
         return adminService.activateUser(userId,"true");
     }
+
+
 }

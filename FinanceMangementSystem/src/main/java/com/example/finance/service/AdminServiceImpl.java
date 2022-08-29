@@ -56,35 +56,14 @@ public class AdminServiceImpl implements AdminService{
 
     }
 
-   /* @Override
-    public Integer activateUser(long userId,String status) {
 
-        //Finding the user in db using userrepository
-        User user = userRepository.findById(userId).get();
-
-        //Check if the user isVerified flag set to false or not
-        if(user.getIsVerified().equalsIgnoreCase("false")){
-            //Check if a admin is present with the provided username and password by building jpql query
-
-            String jpql = "update User u set u.isVerified=:status where u.reg_id=:userId";
-
-            TypedQuery<Admin> query = (TypedQuery<Admin>) em.createQuery(jpql);
-            query.setParameter("userId", userId);
-            query.setParameter("status","true");
-
-            *//*em.createQuery("update User u set u.isVerified=:status where u.reg_id=:userId").setParameter(
-                    "status","true"
-            ).setParameter("userId",userId);*//*
-
-            return 1;
-        }else{
-            return -1;
-        }
-    }*/
 
     @Override
     public Integer activateUser(long userId, String status) {
-        return adminRepository.activateUser(userId,status);
+
+         return adminRepository.activateUser(userId,status);
     }
+
+
 
 }

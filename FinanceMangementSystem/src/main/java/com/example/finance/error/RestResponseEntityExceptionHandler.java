@@ -15,7 +15,19 @@ public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionH
 
     @ExceptionHandler(PasswordMismatchException.class)
     public ResponseEntity<ErrorMessage> passwordMismatchException(PasswordMismatchException p, WebRequest request){
-        ErrorMessage message = new ErrorMessage(HttpStatus.CONFLICT,p.getMessage());
+        ErrorMessage message = new ErrorMessage(HttpStatus.CONFLICT, p.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+    }
+
+    @ExceptionHandler(UserNamePasswordIncorrectException.class)
+    public ResponseEntity<ErrorMessage> UserNamePasswordIncorrectE(UserNamePasswordIncorrectException u, WebRequest request){
+        ErrorMessage message = new ErrorMessage(HttpStatus.CONFLICT,u.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
+    }
+
+    @ExceptionHandler(UserDontExistException.class)
+    public ResponseEntity<ErrorMessage> UserDontExistException(UserDontExistException u, WebRequest request){
+        ErrorMessage message = new ErrorMessage(HttpStatus.CONFLICT,u.getMessage());
         return ResponseEntity.status(HttpStatus.CONFLICT).body(message);
     }
 }

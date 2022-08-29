@@ -17,4 +17,5 @@ public interface AdminRepository extends JpaRepository<Admin,Integer> {
     @Query("update User u set u.isVerified=:status where u.reg_id=:userId")
     Integer activateUser(long userId,String status);
 
+
 }
